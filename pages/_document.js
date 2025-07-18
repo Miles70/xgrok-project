@@ -12,6 +12,13 @@ export default function Document() {
         />
         <meta name="description" content="Whitelist for unbelievable rewards before presale begins!" />
         <meta name="theme-color" content="#000000" />
+
+        {/* 🔍 Plausible Analytics */}
+        <script
+          defer
+          data-domain="xgrokkk.com"
+          src="https://plausible.io/js/script.js"
+        ></script>
       </Head>
       <body>
         <Main />
