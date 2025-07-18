@@ -1,0 +1,295 @@
+/* components/WhitelistBox.module.css */
+.whitelist-box {
+  max-width: 650px;
+  margin: 40px auto 40px;
+  padding: 20px 20px 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 0 15px 3px gold;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  border: 2px solid gold;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-height: 550px;
+  animation: glimmer 2s infinite alternate;
+}
+
+@keyframes glimmer {
+  from {
+    box-shadow: 0 0 15px 3px gold;
+  }
+  to {
+    box-shadow: 0 0 30px 6px #ffd700;
+  }
+}
+
+/* Fireworks Canvas */
+.fireworks-canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Headlines */
+.whitelist-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: gold;
+  text-shadow: 0 0 8px #ffd700, 0 0 15px #ffcc00;
+  animation: deepPulse 4s ease-in-out infinite;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes deepPulse {
+  0% { opacity: 1; text-shadow: 0 0 8px #ffd700, 0 0 15px #ffcc00; }
+  50% { opacity: 0.6; text-shadow: 0 0 15px #ffd700, 0 0 25px #ffcc00; }
+  100% { opacity: 1; text-shadow: 0 0 8px #ffd700, 0 0 15px #ffcc00; }
+}
+
+/* FOMO Message */
+.fomo-message {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffd700;
+  text-shadow: 0 0 4px #ffcc00;
+  line-height: 1.5;
+  margin: 10px 0 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Join FOMO Message */
+.join-fomo-message {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffd700;
+  text-shadow: 0 0 4px #ffcc00;
+  line-height: 1.5;
+  margin: 10px 0 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Presale Info */
+.presale-info {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffd700;
+  text-shadow: 0 0 4px #ffcc00;
+  line-height: 1.5;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Countdown */
+.time-left {
+  font-size: 28px;
+  font-weight: 600;
+  color: #00f7ff;
+  text-shadow: 0 0 3px rgba(0, 247, 255, 0.6);
+  position: relative;
+  z-index: 2;
+}
+
+.time-numbers {
+  font-family: monospace;
+  font-size: 30px;
+  color: #00f7ff;
+  text-shadow: 0 0 5px #0ff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Price */
+.price-info {
+  font-size: 18px;
+  font-weight: 500;
+  color: #00f7ff;
+  position: relative;
+  z-index: 2;
+  margin: 10px 0;
+}
+
+/* Join Button */
+.join-btn {
+  padding: 8px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #fff;
+  background: linear-gradient(270deg, #7b1fa2, #00bfff, #7b1fa2);
+  background-size: 600% 600%;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  animation: gradientShift 6s ease infinite;
+  box-shadow: 0 0 5px #7b1fa2, 0 0 10px #00bfff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.join-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #ff00cc, 0 0 15px #00ffff;
+}
+
+.join-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Currency Buttons */
+.currency-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.bnb-button,
+.usdt-button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #00f7ff;
+  background-color: transparent;
+  color: #00f7ff;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.bnb-active,
+.usdt-active {
+  background-color: #00f7ff;
+  color: #000 !important;
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(137.5px) translateX(5px) rotate(30deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(275px) translateX(-5px) rotate(-30deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(412.5px) translateX(5px) rotate(30deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(550px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.confetti-cyan {
+  background: #00c9ff;
+}
+.confetti-yellow {
+  background: #ffcc00;
+}
+.confetti-green {
+  background: #92fe9d;
+}
+.confetti-pink {
+  background: #ff69b4;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .whitelist-box {
+    max-width: 95%;
+    margin: 30px auto;
+    padding: 15px 15px 25px;
+    min-height: 500px;
+  }
+
+  .whitelist-heading {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .fomo-message {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .join-fomo-message {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .presale-info {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .time-left {
+    font-size: 20px;
+  }
+
+  .time-numbers {
+    font-size: 22px;
+  }
+
+  .price-info {
+    font-size: 14px;
+  }
+
+  .join-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .bnb-button,
+  .usdt-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .fireworks-canvas {
+    height: 100%;
+  }
+}
